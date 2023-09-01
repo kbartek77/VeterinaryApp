@@ -1,6 +1,8 @@
 package pl.gr.veterinaryapp.model.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +14,7 @@ import java.time.OffsetTime;
 
 @Data
 @Entity
+@Getter
 @Table(name = "vets")
 public class Vet {
 
