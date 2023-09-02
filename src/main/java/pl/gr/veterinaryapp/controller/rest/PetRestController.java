@@ -32,11 +32,13 @@ public class PetRestController {
 
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable int id) {
+        System.out.println("fdsfs");
         petService.deletePet(id);
     }
 
     @GetMapping(path = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
     public PetResponseDto getPet(@AuthenticationPrincipal User user, @PathVariable long id) {
+        System.out.println("fdsfs");
         var pet = mapper.map(petService.getPetById(user, id));
         addLinks(pet);
         return pet;
@@ -44,6 +46,7 @@ public class PetRestController {
 
     @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
     public List<PetResponseDto> getAllPets(@AuthenticationPrincipal User user) {
+        System.out.println("fdsfs");
         var pets = mapper.mapAsList(petService.getAllPets(user));
 
         for (var pet : pets) {
