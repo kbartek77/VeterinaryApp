@@ -29,19 +29,16 @@ public class UserController {
 
     @PostMapping
     public UserDto createUser(@RequestBody UserDto user) {
-        System.out.println("fdsfs");
         return mapper.map(userService.createUser(user));
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable long id) {
-        System.out.println("fdsfs");
         userService.deleteUser(id);
     }
 
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable long id) {
-        System.out.println("fdsfs");
         return mapper.map(userService.getUser(id));
     }
 }
