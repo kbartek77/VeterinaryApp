@@ -32,6 +32,7 @@ public class PetRestController {
 
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable int id) {
+        System.out.println("xxxx");
         petService.deletePet(id);
     }
 
