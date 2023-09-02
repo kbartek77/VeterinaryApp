@@ -25,6 +25,7 @@ public class ClientRestController {
 
     @GetMapping("/{id}")
     public ClientResponseDto getClient(@PathVariable long id) {
+        System.out.println("fdsfs");
         return mapper.map(clientService.getClientById(id));
     }
 
@@ -35,6 +36,7 @@ public class ClientRestController {
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
+        System.out.println("fdsfs");
         clientService.deleteClient(id);
     }
 
