@@ -38,6 +38,7 @@ public class PetRestController {
 
     @GetMapping(path = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
     public PetResponseDto getPet(@AuthenticationPrincipal User user, @PathVariable long id) {
+        System.out.println("cxzczx");
         var pet = mapper.map(petService.getPetById(user, id));
         addLinks(pet);
         return pet;
@@ -67,6 +68,7 @@ public class PetRestController {
     }
 
     public Link createClientLink(long id) {
+        System.out.println("xxx");
         return linkTo(methodOn(ClientRestController.class).getClient(id))
                 .withRel("client");
     }

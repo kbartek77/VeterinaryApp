@@ -24,6 +24,7 @@ public class UserController {
 
     @GetMapping
     public List<UserDto> getAllUsers() {
+        System.out.println("fdsfs");
         return mapper.mapAsList(userService.getAllUsers());
     }
 
@@ -39,6 +40,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable long id) {
+        System.out.println("fdsfs");
         return mapper.map(userService.getUser(id));
     }
 }
