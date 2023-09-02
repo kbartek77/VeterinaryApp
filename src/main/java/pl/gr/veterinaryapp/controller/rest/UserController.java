@@ -24,23 +24,25 @@ public class UserController {
 
     @GetMapping
     public List<UserDto> getAllUsers() {
-        System.out.println("fdsfs");
+        System.out.println("gsfgfsgsfgsfg");
         return mapper.mapAsList(userService.getAllUsers());
     }
 
     @PostMapping
     public UserDto createUser(@RequestBody UserDto user) {
+        System.out.println("gsfgfsgsfgsfg");
         return mapper.map(userService.createUser(user));
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable long id) {
+        System.out.println("gsfgfsgsfgsfg");
         userService.deleteUser(id);
     }
 
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable long id) {
-        System.out.println("fdsfs");
+        System.out.println("gsfgfsgsfgsfg");
         return mapper.map(userService.getUser(id));
     }
 }
