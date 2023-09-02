@@ -42,6 +42,7 @@ public class VisitRestController {
 
     @DeleteMapping(path = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
     public void delete(@PathVariable long id) {
+        System.out.println("fdsfs");
         visitService.deleteVisit(id);
     }
 
@@ -80,6 +81,7 @@ public class VisitRestController {
 
     @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
     public List<VisitResponseDto> getAllVisits(@AuthenticationPrincipal User user) {
+        System.out.println("fdsfs");
         var visits = mapper.mapAsList(visitService.getAllVisits(user));
 
         for (var visit : visits) {
